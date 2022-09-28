@@ -67,6 +67,6 @@ def predict():
         return render_template('index.html', prediction_text='Sorry,You are not eligible for loan', extra_text=" -- Prediction by " + Model)
 
 
-app.run()
+# app.run()
 # if __name__ == "__main__":
 #     app.run(debug=True)
