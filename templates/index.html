@@ -1,0 +1,303 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="{{ url_for('static',filename = 'css/bootstrap.min.css')  }}" rel="stylesheet">
+
+    <title>Machine Learning Lab</title>
+
+    <style>
+        .form1 {
+            /* background: #000000; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: fit-content;
+            flex-direction: column;
+            /* width: 500px; */
+            border-left-width: 250px;
+            border: 2px solid #ccc;
+            /* padding: 30px; */
+            background: white;
+            ;
+            /* border-radius: 15px; */
+            /* margin-right: 100px; */
+        }
+
+        .a {
+            color: black;
+            background-color: skyblue;
+
+        }
+
+        body {
+            background-color: lightblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav style="width: 100%;" class="navbar navbar-dark bg-secondary">
+        <a class="  navbar-brand" href="#"
+            style="margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-botttom: 0px;">
+            <img style="max-height: auto; width:100%;border-radius: 25px;"
+                src="{{ url_for('static',filename = 'image/PIET logo with tagline.jpg')  }}" class="img-responsive"
+                style="margin-top:0px;style=width: auto; height: auto; min-width:100%; min-height: auto;">
+            <center>
+                <a href="/aboutusnew" style="color: red; margin-right: 10px;">ABOUT US</a>
+            </center>
+            </div>
+
+        </a>
+
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div style="border-radius: 25px;" class="col-5 d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block">
+
+                <img src="https://ml8ygptwlcsq.i.optimole.com/fMKjlhs.QRSi~1ce64/w:1000/h:628/q:mauto/https://www.unite.ai/wp-content/uploads/2021/12/robot-headphones.jpg"
+                    ) }}" class="img-fluid" style="width: auto; height: 200px; min-width: 400px;min-height: 300px;">
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 " style=" padding: 30px;">
+                <h1 style="color:#000000"><B> <i>Summer Internship 2022 Data Preprocessing Project<B><i></h1>
+                <br><br>
+                <p style="font-size:20px;text-align:justify; color: #808000"><i>It is a Internship project developed at
+                        Summer internship 2022 at poornima Institute of Engineering & technology, Jaipur.This Summer
+                        Internship 2022 on Artificial intelligence and Data Science was conducted from 27 June 2022 to
+                        14 August 2022</i> </p>
+
+
+                <br><br>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="card mb-3">
+
+                    <div class="a">
+                        <marquee behavior="left" direction=""><B>Loan Predictor</B></marquee>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title" ; style="text-align:center">Model Deployment</h5>
+
+                        <!-- Main Input For Receiving Query to our ML -->
+                        <div class="form1" style="border-radius: 25px;">
+                            <form action="{{ url_for('predict')}} " method="get" class="row g-3 my-4">
+
+                                <div class="col-12" style="color: #000;">
+                                    <label for="floatingInput" class="form-label">Gender</label>
+                                    <select id="Gender" name="Gender" class="form-select" required>
+                                        <option value="1">Male</option>
+                                        <option value="0">Female</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="col-12" style="color: #000;">
+                                    <label for="floatingInput" class="form-label">Married</label>
+                                    <select id="Married" name="Married" class="form-select" required>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="col-12" style="color: #000;">
+                                    <label for="floatingInput" class="form-label">Education</label>
+                                    <select id="Education" name="Education" class="form-select" required>
+                                        <option value="1">Graduate</option>
+                                        <option value="0">Not Graduate</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="col-12" style="color: #000;">
+                                    <label for="floatingInput" class="form-label">Self_Employed</label>
+                                    <select id="Self_Employed" name="Self_Employed" class="form-select" required>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <br>
+
+
+
+
+                                <div class="col-12" style="color: #000;">
+                                    <label for="floatingInput" class="form-label">ApplicantIncome</label>
+                                    <input type="number" class="form-control" id="ApplicantIncome"
+                                        name="ApplicantIncome" step="any" min="0" max="90000" required="required"
+                                        placeholder="Enter your Income">
+                                </div>
+                                <br>
+                                <br>
+
+                                <div class="col-12" style="color: #000; border-radius: 25px;">
+                                    <label for="floatingInput" class="form-label">LoanAmount</label>
+                                    <input type="number" class="form-control" id="LoanAmount" name="LoanAmount"
+                                        step="any" min="10" max="1000" required="required"
+                                        placeholder="Enter your LoanAmount">
+                                </div>
+                                <br>
+                                <br>
+
+                                <div class="col-12" style="color: #000; border-radius: 25px;">
+                                    <label for="floatingInput" class="form-label">Loan_Amount_Term</label>
+                                    <input type="number" class="form-control" id="Loan_Amount_Term"
+                                        name="Loan_Amount_Term" step="any" min="100" max="500" required="required"
+                                        placeholder="Enter your Loan_Amount_Term">
+                                </div>
+                                <br>
+                                <br>
+
+
+
+                                <div class="col-md-4" style="color: #000;">
+                                    <label for="inputState" class="form-label">Property_Area</label>
+                                    <select id="Property_Area" name="Property_Area" step="any" class="form-select"
+                                        required>
+                                        <option value="0">Rural</option>
+                                        <option value="1">Semiurban</option>
+                                        <option value="2">Urban</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <br>
+
+
+
+                                <div class="col-md-4" style="color: #000;">
+                                    <label for="inputState" class="form-label">Choose a Model</label>
+                                    <select id="Model" name="Model" step="any" class="form-select" required>
+                                        <option selected>Random Forest Classifier</option>
+                                        <option>Decision Tree Classifier</option>
+                                        <option>KNN Classifier</option>
+                                        <option>SVM Classifier</option>
+                                        <option>Naive Bayes Classifier</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <br>
+
+                                <div class="col-12">
+                                    <center>
+                                        <button type="submit" value="NB" name="NB"
+                                            class="btn btn-outline-primary">Submit</button>
+                                    </center>
+                                </div>
+                                <br>
+                            </form>
+
+
+                            <p style="color: black;">
+                                {{prediction_text}}
+                                {{extra_text}}
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="col-md-12">
+            <center>
+                <h3 class="section-title" style="text-align: center; color:black;">Sponsored By</h3>
+            </center>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <div class="card mb-3">
+
+                        <div class="card">
+                            <img style="max-height: 200px; border-radius: 25px;"
+                                src="{{ url_for('static',filename = 'image/AICTEIdeaLabFooterLogo.png')  }}"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title" style="text-align:center">IDEA LAB</h5>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-4">
+                    <div class="card mb-3">
+
+                        <div class="card">
+                            <img style="max-height: 200px; border-radius: 25px;"
+                                src="{{ url_for('static',filename = 'image/nbanew.png')  }}" class="card-img-top"
+                                alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title" style="text-align:center">NBA</h5>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-10 col-md-3">
+                    <div class="card mb-3">
+
+                        <div class="card">
+                            <img style="max-height: 200px; border-radius: 25px;"
+                                src="{{ url_for('static',filename = 'image/aicte-logo.png')  }}" class="card-img-top"
+                                alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title" ; style="text-align:center; color:black;">AICTE MODROB DEEP
+                                    LEARNING LAB</h5>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <br><br><br><br><br>
+                <div class="fixed-bottom ">
+                    <div class="bg-secondary " style="min-height: 40px;">
+
+                        <marquee style="background-color:skyblue; color:Black; margin-top: 7px;">
+                            <h9>Developed by Lucky Sharda,CS undergrad</h9>
+                        </marquee>
+                    </div>
+                </div>
+                <!-- change later-->
+                <script src="{{ url_for('static',filename = 'js/bootstrap.bundle.min.js')  }}"></script>
+
+</body>
+
+</html>
